@@ -12,6 +12,7 @@ require __DIR__ . '/../src/config/db.php';
 $app = AppFactory::create();
 $app->setBasePath('/Traversy-PHP-Server');
 $app->addRoutingMiddleware();
+$app->addBodyParsingMiddleware();
 
 $app->get('/', function (Request $request, Response $response, array $args) {
     $response->getBody()->write("Hello World");
